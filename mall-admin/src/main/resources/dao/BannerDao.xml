@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.dao.BannerDao">
+    <insert id="insertList">
+        insert into banner (id,name,pic,status,url) value
+         (
+	         #{banner.id,jdbcType=VARCHAR},
+	         #{banner.name,jdbcType=VARCHAR},
+	         #{banner.pic,jdbcType=VARCHAR},
+	         #{banner.status,jdbcType=VARCHAR},
+	         #{banner.url,jdbcType=VARCHAR}
+         )
+    </insert>
+    
+    <select id="list" resultType="com.macro.mall.dto.Banner">
+    	select * from banner
+    </select>
+    
+    <select id="delete" resultType="com.macro.mall.dto.Banner">
+    	delete from banner where id = #{id}
+    </select>
+</mapper>
