@@ -1,6 +1,7 @@
 package com.macro.mall.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Goods {
 	private String id;
@@ -12,6 +13,49 @@ public class Goods {
 	private BigDecimal price;
 	private BigDecimal promotionprice ;
 	private String tag;
+	private String banner;
+	private String isbanner;
+	private String bigpic;
+	public String getBigpic() {
+		return bigpic;
+	}
+	public void setBigpic(String bigpic) {
+		this.bigpic = bigpic;
+	}
+	private List<GoodDetail> goodDetail;
+	private List<GoodParam> goodParam;
+	private List<GoodMeasurement> goodsMeasurement;
+	
+	public List<GoodDetail> getGoodDetail() {
+		return goodDetail;
+	}
+	public List<GoodParam> getGoodParam() {
+		return goodParam;
+	}
+	public List<GoodMeasurement> getGoodsMeasurement() {
+		return goodsMeasurement;
+	}
+	public void setGoodDetail(List<GoodDetail> goodDetail) {
+		this.goodDetail = goodDetail;
+	}
+	public void setGoodParam(List<GoodParam> goodParam) {
+		this.goodParam = goodParam;
+	}
+	public void setGoodsMeasurement(List<GoodMeasurement> goodsMeasurement) {
+		this.goodsMeasurement = goodsMeasurement;
+	}
+	public String getBanner() {
+		return banner;
+	}
+	public String getIsbanner() {
+		return isbanner;
+	}
+	public void setBanner(String banner) {
+		this.banner = banner;
+	}
+	public void setIsbanner(String isbanner) {
+		this.isbanner = isbanner;
+	}
 	public BigDecimal getPrice() {
 		return price;
 	}

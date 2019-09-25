@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.macro.mall.dao.GoodsDao">
     <insert id="insertList">
-        insert into goods (id,pic,name,url,status,descption,descption,price,promotionprice,tag) value
+        insert into goods (id,pic,name,url,status,descption,price,promotionprice,tag,banner,bigpic,isbanner) value
          (
 	         #{goods.id,jdbcType=VARCHAR},
 	         #{goods.pic,jdbcType=VARCHAR},
@@ -10,10 +10,41 @@
 	         #{goods.url,jdbcType=VARCHAR},
 	         #{goods.status,jdbcType=VARCHAR},
 	         #{goods.descption,jdbcType=VARCHAR},
-	         #{goods.descption,jdbcType=VARCHAR},
 	         #{goods.price,jdbcType=VARCHAR},
 	         #{goods.promotionprice,jdbcType=VARCHAR},
-	         #{goods.tag,jdbcType=VARCHAR}
+	         #{goods.tag,jdbcType=VARCHAR},
+	         #{goods.banner,jdbcType=VARCHAR},
+	         #{goods.bigpic,jdbcType=VARCHAR},
+	         #{goods.isbanner,jdbcType=VARCHAR}
+         )
+    </insert>
+    <insert id="insertGoodDetail">
+        insert into good_detail (id,url,sort,good_id) value
+         (
+	        #{param.id,jdbcType=VARCHAR},
+	         #{param.url,jdbcType=VARCHAR},
+	         #{param.sort,jdbcType=VARCHAR},
+	         #{param.goodId,jdbcType=VARCHAR}
+         )
+    </insert>
+
+    <insert id="insertGoodParam">
+        insert into good_param (id,url,sort,good_id) value
+         (
+	         #{param.id,jdbcType=VARCHAR},
+	         #{param.url,jdbcType=VARCHAR},
+	         #{param.sort,jdbcType=VARCHAR},
+	         #{param.goodId,jdbcType=VARCHAR}
+         )
+    </insert>
+    
+    <insert id="insertGoodMeasurement">
+        insert into good_measurement (id,url,sort,good_id) value
+         (
+	         #{param.id,jdbcType=VARCHAR},
+	         #{param.url,jdbcType=VARCHAR},
+	         #{param.sort,jdbcType=VARCHAR},
+	         #{param.goodId,jdbcType=VARCHAR}
          )
     </insert>
     
